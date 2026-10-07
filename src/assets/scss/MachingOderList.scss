@@ -1,0 +1,471 @@
+/* ==========================================
+   MACHINING PAGE – Layout 2 phần
+   ========================================== */
+.machining-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: calc(100vh - 64px); // trừ header layout
+  overflow: hidden;
+}
+
+/* ==========================================
+   PHẦN TRÊN – ACTIVE ORDER PANEL
+   ========================================== */
+.active-order-panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin: 12px 12px 0;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+
+  &.active-order-empty {
+    padding: 24px;
+    color: #94a3b8;
+    text-align: center;
+  }
+
+  /* ---- Header trạm ---- */
+  .active-panel-station {
+    padding: 10px 16px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 8px 8px 0 0;
+
+    .station-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .station-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .station-text {
+      .station-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        .station-code {
+          font-weight: 500;
+          color: #64748b;
+          font-size: 13px;
+        }
+      }
+      .station-meta {
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 1px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .station-online-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse-green 1.6s infinite;
+    }
+
+    .station-online-text {
+      color: #16a34a;
+      font-weight: 600;
+    }
+  }
+
+  /* ---- Chi tiết đơn hàng ---- */
+  .active-panel-detail {
+    padding: 12px 16px;
+
+    .detail-title-row {
+      margin-bottom: 12px;
+
+      .detail-lsx {
+        font-size: 18px;
+        font-weight: 800;
+        color: #1677ff;
+        cursor: pointer;
+        &:hover { text-decoration: underline; }
+      }
+
+      .detail-sep {
+        color: #94a3b8;
+        font-size: 18px;
+      }
+
+      .detail-order-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .detail-machine-meta {
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 3px;
+      }
+    }
+
+    /* Grid thông số */
+    .detail-info-grid {
+      background: #fafafa;
+      border: 1px solid #f1f5f9;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+
+      .info-label {
+        font-size: 10px;
+        font-weight: 700;
+        color: #94a3b8;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+      }
+
+      .info-value {
+        font-size: 13px;
+        color: #1e293b;
+        font-weight: 500;
+
+        &.highlight-green {
+          color: #16a34a;
+          font-weight: 700;
+          font-size: 14px;
+        }
+
+        &.highlight-blue {
+          color: #1677ff;
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+    }
+
+    /* Footer */
+    .detail-footer {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 10px;
+
+      .footer-time-label {
+        font-size: 10px;
+        font-weight: 700;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+
+      .footer-time-value {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .running-clock {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #1e293b;
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        margin-top: 2px;
+
+        .clock-digits {
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    /* Trạng thái + nút tạm dừng */
+    .detail-status-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+
+      .status-bar-running {
+        font-size: 13px;
+        color: #16a34a;
+        font-weight: 600;
+      }
+
+      .status-bar-paused {
+        font-size: 13px;
+        color: #b45309;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* ==========================================
+   PHẦN DƯỚI – LIST SECTION
+   ========================================== */
+.machining-list-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 8px 12px 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  min-height: 0;
+
+  /* Header bảng */
+  .list-section-header {
+    padding: 10px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    flex-shrink: 0;
+
+    .list-section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .list-section-subtitle {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .filter-label {
+      font-size: 12px;
+      color: #64748b;
+      white-space: nowrap;
+    }
+
+    .list-search-input {
+      width: 100%;
+      height: 24px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      padding: 0 8px;
+      font-size: 12px;
+      color: #1e293b;
+      outline: none;
+
+      &:focus {
+        border-color: #1677ff;
+        box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.1);
+      }
+
+      &::placeholder { color: #94a3b8; }
+    }
+  }
+
+  /* Alert banner */
+  .machining-alert-banner {
+    background: #fff8f0;
+    border-bottom: 1.5px solid #f59e0b;
+    border-left: 4px solid #f59e0b;
+    padding: 8px 16px;
+    flex-shrink: 0;
+
+    .alert-title {
+      font-weight: 600;
+      color: #b45309;
+      font-size: 13px;
+
+      .alert-icon { margin-right: 6px; }
+    }
+
+    .alert-action-link {
+      color: #dc2626;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: underline;
+      white-space: nowrap;
+
+      &:hover { color: #b91c1c; }
+    }
+  }
+
+  /* Table wrapper – scroll.y trên Table tự xử lý scroll dọc */
+  .machining-table-wrapper {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+
+    // Pagination cố định bên dưới, không bị scroll
+    .ant-table-pagination {
+      margin: 6px 16px !important;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+/* ==========================================
+   BẢNG DANH SÁCH
+   ========================================== */
+.machining-table {
+  // Header xanh dương đậm
+  .ant-table-thead > tr > th {
+    background: #1565c0 !important;
+    font-weight: 700;
+    font-size: 12px;
+    color: #ffffff !important;
+    padding: 7px 10px;
+    white-space: nowrap;
+    border-right: 1px solid #ffffff !important;
+    border-bottom: 1px solid #ffffff !important;
+
+    &::before {
+      display: none !important; // ẩn divider mặc định của antd
+    }
+  }
+
+  // Border trắng cho cell body
+  .ant-table-tbody > tr > td {
+    padding: 7px 10px;
+    font-size: 13px;
+    vertical-align: middle;
+    border-right: 1px solid #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    background: #ffffff;
+  }
+
+  // Bỏ màu nền row theo trạng thái, giữ hover nhẹ
+  .ant-table-tbody > tr.row-running > td,
+  .ant-table-tbody > tr.row-completed > td,
+  .ant-table-tbody > tr.row-paused > td {
+    background: #ffffff;
+  }
+
+  // Hover row
+  .ant-table-tbody > tr:hover > td {
+    background: #e3f2fd !important;
+  }
+
+  // Border ngoài bảng
+  .ant-table {
+    border: 1px solid #ffffff;
+  }
+
+  .lsx-link {
+    color: #1677ff;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 13px;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  .file-code {
+    font-size: 12px;
+    color: #0369a1;
+    font-weight: 600;
+  }
+
+  .sheet-count-done {
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .sheet-count-total {
+    color: #475569;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   STATUS BADGES
+   ========================================== */
+.machining-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+
+  &.status-running {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse-green 1.5s infinite;
+    }
+  }
+
+  &.status-waiting {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+  }
+
+  &.status-paused {
+    background: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f59e0b;
+    }
+  }
+
+  &.status-completed {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #3b82f6;
+    }
+  }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}

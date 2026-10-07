@@ -1,0 +1,363 @@
+.main-layout {
+  height: 100vh;
+  overflow: hidden;
+  background-color: $color-bg-white;
+
+  &-inner {
+    background-color: $color-bg-body;
+    transition: $transition-fast;
+    width: 100%;
+    @include flex-column;
+    height: 100vh;
+  }
+
+  &-content {
+    margin: $spacing-md $spacing-base;
+    padding: 0;
+    @include flex-column;
+    flex: 1;
+    overflow: hidden;
+
+    @include tablet-down {
+      margin: $spacing-md $spacing-sm !important;
+    }
+  }
+}
+
+// --- Header ---
+.app-header {
+  @include tablet-down {
+    padding: 0 $spacing-sm !important;
+
+    > div:first-child {
+      gap: $spacing-sm !important;
+    }
+
+    .ant-space {
+      gap: $spacing-sm !important;
+      margin-left: $spacing-sm !important;
+    }
+  }
+}
+
+.notif-item-hover {
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #f1f5f9;
+  }
+}
+
+.header-search-bar {
+  @include tablet-down {
+    display: none !important;
+  }
+}
+
+.header-title {
+  @include text-truncate;
+  flex: 1 1 auto;
+  max-width: none;
+  min-width: 0;
+
+  @include tablet-down {
+    font-size: $font-size-sm !important;
+    letter-spacing: 0 !important;
+  }
+
+  @include mobile-down {
+    font-size: 11px !important;
+  }
+}
+
+.header-user-name {
+  @include tablet-down {
+    display: none !important;
+  }
+}
+
+.header-user-dropdown {
+  @include tablet-down {
+    gap: 0 !important;
+    padding: 4px !important;
+  }
+}
+
+.header-user-dropdown {
+  &:hover {
+    background-color: $color-bg-hover;
+  }
+}
+
+// --- Sidebar Menu ---
+.ant-menu-light {
+  background: transparent !important;
+  border-right: none !important;
+
+  .ant-menu-item-group-title {
+    color: $color-sidebar-group !important;
+    font-size: $font-size-md !important;
+    font-weight: $font-weight-medium;
+    padding-left: $spacing-lg !important;
+    margin-top: $spacing-md;
+  }
+
+  .ant-menu-submenu-title {
+    color: $color-sidebar-group !important;
+    font-size: $font-size-md !important;
+    font-weight: $font-weight-medium;
+    height: 40px !important;
+    line-height: 40px !important;
+    margin: $spacing-md 0 0 !important;
+    padding-left: $spacing-lg !important;
+    background: transparent !important;
+
+    .anticon {
+      color: $color-sidebar-group !important;
+    }
+
+    .ant-menu-submenu-arrow {
+      display: none;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-sidebar-group !important;
+      background: transparent !important;
+    }
+  }
+
+  .ant-menu-submenu > .ant-menu {
+    background: transparent !important;
+  }
+
+  .ant-menu-item {
+    color: $color-text-secondary !important;
+    border-radius: $radius-md !important;
+    margin: $spacing-xs $spacing-sm !important;
+    width: calc(100% - 16px) !important;
+    padding-left: $spacing-lg !important;
+    font-weight: $font-weight-medium;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: $color-bg-sidebar-hover !important;
+      color: $color-text-main !important;
+    }
+  }
+
+  .ant-menu-item-selected {
+    background-color: $color-bg-selected !important;
+    color: $color-primary-hover !important;
+    font-weight: $font-weight-semibold;
+
+    .anticon {
+      color: $color-primary-hover !important;
+    }
+  }
+}
+
+// --- Drawer ---
+.app-drawer {
+  .ant-drawer-body {
+    padding: $spacing-lg !important;
+  }
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+// flex
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.gap-2 { gap: 2px; }
+.gap-4 { gap: 4px; }
+.gap-6 { gap: 6px; }
+.gap-8 { gap: 8px; }
+.gap-10 { gap: 10px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-20 { gap: 20px; }
+.gap-24 { gap: 24px; }
+.gap-32 { gap: 32px; }
+.gap-40 { gap: 40px; }
+.gap-48 { gap: 48px; }
+
+
+/* Padding */
+.p-0 { padding: 0; }
+.p-4 { padding: 4px; }
+.p-8 { padding: 8px; }
+.p-12 { padding: 12px; }
+.p-16 { padding: 16px; }
+.p-20 { padding: 20px; }
+.p-24 { padding: 24px; }
+.p-32 { padding: 32px; }
+.p-40 { padding: 40px; }
+.p-48 { padding: 48px; }
+
+/* Margin */
+.m-0 { margin: 0; }
+.m-4 { margin: 4px; }
+.m-8 { margin: 8px; }
+.m-12 { margin: 12px; }
+.m-16 { margin: 16px; }
+.m-20 { margin: 20px; }
+.m-24 { margin: 24px; }
+.m-32 { margin: 32px; }
+.m-40 { margin: 40px; }
+.m-48 { margin: 48px; }
+
+.px-4 { padding-left: 4px; padding-right: 4px; }
+.px-8 { padding-left: 8px; padding-right: 8px; }
+.px-12 { padding-left: 12px; padding-right: 12px; }
+.px-16 { padding-left: 16px; padding-right: 16px; }
+.px-20 { padding-left: 20px; padding-right: 20px; }
+.px-24 { padding-left: 24px; padding-right: 24px; }
+.px-32 { padding-left: 32px; padding-right: 32px; }
+.px-40 { padding-left: 40px; padding-right: 40px; }
+.px-48 { padding-left: 48px; padding-right: 48px; }
+
+.py-4 { padding-top: 4px; padding-bottom: 4px; }
+.py-8 { padding-top: 8px; padding-bottom: 8px; }
+.py-12 { padding-top: 12px; padding-bottom: 12px; }
+.py-16 { padding-top: 16px; padding-bottom: 16px; }
+.py-20 { padding-top: 20px; padding-bottom: 20px; }
+.py-24 { padding-top: 24px; padding-bottom: 24px; }
+.py-32 { padding-top: 32px; padding-bottom: 32px; }
+.py-40 { padding-top: 40px; padding-bottom: 40px; }
+.py-48 { padding-top: 48px; padding-bottom: 48px; }
+
+.mx-4 { margin-left: 4px; margin-right: 4px; }
+.mx-8 { margin-left: 8px; margin-right: 8px; }
+.mx-12 { margin-left: 12px; margin-right: 12px; }
+.mx-16 { margin-left: 16px; margin-right: 16px; }
+.mx-20 { margin-left: 20px; margin-right: 20px; }
+.mx-24 { margin-left: 24px; margin-right: 24px; }
+.mx-32 { margin-left: 32px; margin-right: 32px; }
+.mx-40 { margin-left: 40px; margin-right: 40px; }
+.mx-48 { margin-left: 48px; margin-right: 48px; }
+
+.my-4 { margin-top: 4px; margin-bottom: 4px; }
+.my-8 { margin-top: 8px; margin-bottom: 8px; }
+.my-12 { margin-top: 12px; margin-bottom: 12px; }
+.my-16 { margin-top: 16px; margin-bottom: 16px; }
+.my-20 { margin-top: 20px; margin-bottom: 20px; }
+.my-24 { margin-top: 24px; margin-bottom: 24px; }
+.my-32 { margin-top: 32px; margin-bottom: 32px; }
+.my-40 { margin-top: 40px; margin-bottom: 40px; }
+.my-48 { margin-top: 48px; margin-bottom: 48px; }
+// padding, margin
+
+@for $space from 0 through 48 {
+  .p-#{$space} {
+    padding: #{$space}px;
+  }
+
+  .px-#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+
+  .py-#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+
+  .pt-#{$space} {
+    padding-top: #{$space}px;
+  }
+
+  .pr-#{$space} {
+    padding-right: #{$space}px;
+  }
+
+  .pb-#{$space} {
+    padding-bottom: #{$space}px;
+  }
+
+  .pl-#{$space} {
+    padding-left: #{$space}px;
+  }
+
+  .m-#{$space} {
+    margin: #{$space}px;
+  }
+
+  .mx-#{$space} {
+    margin-left: #{$space}px;
+    margin-right: #{$space}px;
+  }
+
+  .my-#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+
+  .mt-#{$space} {
+    margin-top: #{$space}px;
+  }
+
+  .mr-#{$space} {
+    margin-right: #{$space}px;
+  }
+
+  .mb-#{$space} {
+    margin-bottom: #{$space}px;
+  }
+
+  .ml-#{$space} {
+    margin-left: #{$space}px;
+  }
+
+  .gap-#{$space} {
+    gap: #{$space}px;
+  }
+}

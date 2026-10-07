@@ -1,0 +1,59 @@
+.profile-page {
+  border: 1px solid $color-border-light;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+}
+
+.profile-summary {
+  text-align: center;
+  .ant-avatar {
+    background: $color-primary;
+    margin: 12px 0 14px;
+  }
+  h4.ant-typography {
+    margin: 0 0 4px;
+  }
+  .profile-role-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 14px 0 20px;
+  }
+}
+
+.profile-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  text-align: left;
+  border-top: 1px solid $color-border-light;
+  span {
+    color: $color-text-muted;
+  }
+  strong {
+    color: $color-text-main;
+    text-align: right;
+  }
+}
+
+.profile-detail {
+  min-height: 420px;
+  padding-left: 100px !important;
+}
+.profile-form {
+  max-width: 760px;
+  padding-top: 8px;
+}
+.password-form {
+  max-width: 460px;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .profile-detail {
+    min-height: auto;
+    border-top: 1px solid $color-border-light;
+    padding: 15px !important;
+  }
+}

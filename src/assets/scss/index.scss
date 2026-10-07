@@ -1,0 +1,26 @@
+// 1. Foundation
+@import 'variables';
+@import 'mixins';
+
+// 2. Base
+@import 'base';
+
+// 3. Admin Layout
+@import 'admin-layout/layout';
+@import 'admin-layout/table';
+@import 'admin-layout/page-container';
+@import 'admin-layout/file-manager';
+@import 'admin-layout/dashboard';
+@import 'admin-layout/dashboard-department';
+@import 'admin-layout/nesting';
+@import 'admin-layout/profile';
+@import 'admin-layout/notification';
+@import 'AllocationSchedule.scss';
+@import 'MachingOderList.scss';
+
+// 4. Web Layout
+@import 'web-layout/login';
+@import 'web-layout/form';
+
+// 5. Utilities & Custom overrides
+@import 'custom/custom';

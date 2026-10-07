@@ -1,0 +1,564 @@
+// --- Standard Table Container ---
+.app-table-container,
+.app-card {
+  @include card-surface;
+  // padding: $spacing-base;
+  padding: 10px;
+}
+
+// .app-table-container.template-picker-table {
+//   padding: 0;
+//   border: 0;
+//   box-shadow: none;
+//   background: transparent;
+// }
+
+.app-table-container {
+  .ant-table-wrapper {
+    background: transparent;
+  }
+}
+
+.ant-table-wrapper .ant-table {
+  background: transparent;
+}
+
+// --- Table Header ---
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background: $table-header-bg !important;
+  color: $table-header-color !important;
+  font-weight: $font-weight-medium !important;
+  font-size: $font-size-base;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid $color-border-light !important;
+  padding: $table-cell-padding !important;
+
+  &:not(:last-child) {
+    border-right: 1px solid $table-header-separator !important;
+  }
+
+  // Ẩn dải phân cách dọc mặc định của Antd
+  &::before {
+    display: none !important;
+  }
+}
+
+// --- Table Rows ---
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  border-bottom: 1px solid $color-border !important;
+  transition: $transition-fast;
+  font-size: $font-size-base;
+  color: $color-text-body;
+  padding: $table-row-padding !important;
+
+  &:not(:last-child) {
+    border-right: 1px solid $color-border-light !important;
+  }
+}
+
+// --- Hover effect ---
+.ant-table-wrapper .ant-table-tbody > tr:hover > td {
+  background: $color-bg-hover !important;
+}
+
+// --- Pagination ---
+.ant-table-wrapper .ant-pagination {
+  margin-top: $spacing-lg !important;
+  margin-bottom: 0 !important;
+}
+
+.common-table {
+  border: 1px solid $color-border-light;
+  border-radius: $radius-md;
+  overflow: hidden;
+
+  .ant-table-container {
+    border-inline-start: 0 !important;
+  }
+
+  .ant-table-pagination.ant-pagination {
+    margin: 12px 0 0 !important;
+    padding: 12px;
+    // border-top: 1px solid $color-border-light;
+  }
+}
+
+.ant-pagination-item-active {
+  border-color: $color-primary-hover;
+  background-color: $color-primary-light;
+
+  a {
+    color: $color-primary-hover !important;
+  }
+}
+
+//Tree Table
+.tree-table-container {
+  @include card-surface;
+  overflow: hidden;
+
+  .ant-table-wrapper .ant-table {
+    background: transparent;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .ant-table-container,
+  .ant-table-content {
+    overflow-x: hidden !important;
+  }
+
+  .ant-table-body {
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    scrollbar-gutter: stable;
+  }
+
+  .ant-table-thead > tr > th {
+    background: $table-header-bg !important;
+    color: $table-header-color !important;
+    font-weight: $font-weight-medium !important;
+    font-size: 13px;
+    padding: $table-cell-padding !important;
+    border-bottom: 1px solid $color-border !important;
+
+    &:not(:last-child) {
+      border-right: 1px solid $table-header-separator !important;
+    }
+  }
+
+  // khoản cách các ô trong bảng
+
+  .ant-table-tbody > tr > td {
+    padding: $table-row-padding !important;
+    border-bottom: 1px solid $color-border !important;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      border-right: 1px solid $color-border-light !important;
+    }
+  }
+
+  .treetable-row:hover > td {
+    background: $color-bg-hover !important;
+  }
+
+  .ant-form-item {
+    margin-bottom: 0 !important;
+  }
+
+  .ant-form-item-explain {
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: $font-size-xs;
+    line-height: 1.2;
+    margin-top: 2px;
+    z-index: 10;
+  }
+}
+
+// --- Treetable Cell ---
+.treetable-cell-value-wrap {
+  padding: 0;
+  border-radius: $radius-base;
+  cursor: text;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  transition: $transition-fast;
+  border: 1px solid transparent;
+
+  &:hover {
+    border: 1px solid #d9d9d9;
+    background-color: $color-bg-white;
+  }
+}
+
+.treetable-cell-placeholder {
+  color: $color-text-disabled;
+  font-style: italic;
+  font-size: $font-size-base;
+}
+
+// --- TreeTable Row Actions ---
+.treetable-row-delete-btn {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.treetable-row:hover .treetable-row-delete-btn {
+  opacity: 1;
+}
+
+.treetable-add-btn {
+  padding: $spacing-md $spacing-base;
+  color: $color-text-muted;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: $transition-fast;
+  background: $color-bg-white;
+  border-top: 1px solid $color-bg-body;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    background: $color-bg-hover;
+    color: $color-primary-hover;
+  }
+}
+
+// --- Subtask Tree Line & Task Name Actions ---
+.tree-table-container {
+  // Bố cục ô tên công việc
+  .task-name-cell-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .task-name-text {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    min-height: 28px;
+  }
+
+  .task-name-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding-left: 12px;
+
+    .btn-open {
+      color: #334155;
+      font-weight: 500;
+      border: 1px solid #cbd5e1;
+      background-color: white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 24px;
+      padding: 0 8px;
+
+      &:hover {
+        color: #2563eb;
+        border-color: #2563eb;
+      }
+    }
+
+    .btn-add {
+      color: #2563eb;
+      background-color: #ffffff;
+      border-radius: 4px;
+      font-size: $font-size-lg;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: #eff6ff;
+        color: #1d4ed8;
+      }
+    }
+  }
+
+  // Hiện nút action ở góc phải khi hover cả dòng (row)
+  .ant-table-row:hover .task-name-actions {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .treetable-cell-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 24px;
+  }
+
+  .treetable-expand-icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 6px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .treetable-expand-count {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #94a3b8;
+    font-size: 11px;
+    margin-top: 2px;
+    line-height: 1;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .treetable-lines-wrapper {
+    position: static;
+  }
+
+  .treetable-line-v {
+    position: absolute;
+    width: 0;
+    border-left: 1px dashed #c0c5cc;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .treetable-line-h {
+    position: absolute;
+    height: 0;
+    border-top: 1px dashed #c0c5cc;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .treetable-first-col-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .treetable-empty-spacer {
+    width: 0;
+    height: 17px;
+    margin-right: 2px;
+    flex-shrink: 0;
+  }
+
+  .treetable-editing-wrap {
+    margin: 0;
+    flex: 1;
+  }
+}
+
+.table {
+  &-task-title {
+    font-weight: 400;
+    color: $color-gray-700;
+    background-color: $color-info-100;
+  }
+  &-task-text {
+    font-weight: 400;
+    color: $color-gray-700;
+  }
+}
+.btn-add {
+  color: $color-primary;
+}
+.btn-edit-table {
+  color: $color-primary;
+  &:hover {
+    color: $color-primary-700 !important;
+    background-color: $color-primary-100 !important;
+  }
+}
+.btn-not-edit-table {
+  color: $color-gray-400;
+}
+.btn-remove-table {
+  color: $color-danger-500;
+
+  &:hover {
+    color: $color-danger-700 !important;
+    background-color: $color-danger-100 !important;
+  }
+}
+
+.two-line-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.project-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 2px;
+
+  .project-table-action-slot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+    width: 25px;
+    height: 25px;
+  }
+
+  // Khi đủ 3 thao tác, căn cả nhóm về phía phải của cột.
+  .ant-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+  }
+
+  // Giữ cụm 1 hoặc 2 icon ở chính giữa khi các slot còn lại rỗng.
+  // &:not(:has(.project-table-action-slot:nth-child(2) .ant-btn))
+  //   .project-table-action-slot:first-child {
+  //   transform: translateX(32px);
+  // }
+
+  // &:has(.project-table-action-slot:nth-child(2) .ant-btn):not(
+  //     :has(.project-table-action-slot:nth-child(3) .ant-btn)
+  //   ) {
+  //   .project-table-action-slot:nth-child(2),
+  //   .project-table-action-slot:nth-child(3) {
+  //     transform: translateX(-16px);
+  //   }
+  // }
+}
+.task-status-select {
+  .ant-select-selector {
+    padding: 0 2px !important;
+  }
+
+  .ant-select-selection-wrap {
+    min-width: 0;
+  }
+
+  .ant-select-selection-search {
+    inset-inline-start: 2px !important;
+    inset-inline-end: 20px !important;
+  }
+
+  .ant-select-selection-item {
+    padding-inline-end: 18px !important;
+  }
+
+  .ant-select-arrow {
+    inset-inline-end: 4px !important;
+  }
+}
+
+// style thanh scroll select status
+.task-status-select {
+  & + .ant-select-dropdown {
+    scrollbar-width: thin;
+  }
+}
+
+.ant-select-dropdown {
+  .rc-virtual-list-scrollbar {
+    width: 2px !important;
+  }
+
+  .rc-virtual-list-scrollbar-thumb {
+    width: 2px !important;
+    border-radius: 4px;
+    background: #e5e7eb !important;
+  }
+
+  .rc-virtual-list-scrollbar-thumb:hover {
+    background: #d1d5db !important;
+  }
+}
+
+.personal-task-toolbar-row {
+  width: 100%;
+}
+
+.personal-task-column-visibility {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+// custom table tree
+
+.task-two-level-table, .tree-table-container {
+  // Phục hồi hiển thị mặc định của Antd Table để sửa lỗi không sổ ra bảng
+  .ant-table-expanded-row {
+    display: table-row !important;
+
+    > td,
+    > td.ant-table-expanded-row-cell {
+      padding: 2px !important; /* Đảm bảo cả 4 hướng đều là 2px, sửa lỗi lệch trái */
+      background: #fafbfc !important;
+    }
+  }
+
+  .task-child-table-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  &.task-two-level-table {
+    overflow-x: auto;
+
+    .ant-table-container,
+    .ant-table-content,
+    .ant-table-body {
+      overflow-x: auto !important;
+    }
+  }
+
+  .task-child-table {
+    .ant-table,
+    .ant-table-container,
+    .ant-table-content {
+      width: 100%;
+      min-width: 100%;
+    }
+
+    // Header bảng con
+    // .ant-table-thead > tr > th {
+    //   padding: 6px 10px !important;
+    //   color: #344054 !important;
+    //   font-weight: 600;
+    //   background: #f9fafb !important; /* màu xám nhạt */
+    //   border-color: #e4e7ec !important;
+
+    //   &::before {
+    //     background-color: #e4e7ec !important;
+    //   }
+    // }
+
+    // Nội dung bảng con
+    .ant-table-tbody > tr > td {
+      padding: 6px 10px !important;
+      background: #ffffff !important;
+      border-color: #e4e7ec !important;
+    }
+
+    .ant-table-tbody > tr:hover > td {
+      background: #f9fafb !important;
+    }
+  }
+}
+
+

@@ -1,0 +1,139 @@
+.notification-popover {
+  .ant-popover-title {
+    padding: $spacing-sm $spacing-xs;
+    border-bottom: 1px solid $color-border-light;
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-text-main;
+  }
+
+  .ant-popover-inner-content {
+    padding: 0;
+  }
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .notification-header-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+  }
+}
+
+.notification-content {
+  width: 550px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+
+  .ant-list {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .ant-spin-nested-loading,
+  .ant-spin-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .ant-list-items {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  .ant-list-pagination {
+    margin: 0;
+    padding: $spacing-sm $spacing-sm $spacing-md;
+    border-top: 1px solid $color-border-light;
+  }
+}
+
+.notification-item {
+  padding: $spacing-md $spacing-sm;
+
+  &.unread {
+    cursor: pointer;
+  }
+
+  &.read {
+    cursor: default;
+  }
+
+  .notification-title {
+    word-break: break-word;
+    white-space: normal;
+
+    &.unread {
+      font-weight: $font-weight-bold;
+    }
+    &.read {
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .notification-description-content {
+    word-break: break-word;
+    white-space: normal;
+    color: $color-text-body;
+    &.unread {
+      font-weight: $font-weight-bold;
+    }
+    &.read {
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .notification-description-date {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: $spacing-xs;
+    &.unread {
+      font-weight: $font-weight-bold;
+    }
+    &.read {
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+.notification-bell-avatar {
+  cursor: pointer;
+  background-color: $color-gray-100;
+  color: $color-text-secondary;
+}
+
+
+.task-notification {
+  width: 400px;
+  background: linear-gradient(135deg, #e6f4ff 0%, #ffffff 100%);
+  border: 1px solid #91caff;
+  border-left: 5px solid #1677ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.task-notification__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1677ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-notification__content {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  line-height: 1.6;
+}

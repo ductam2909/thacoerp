@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: $font-family-inter;
+  font-size: $font-size-md;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $color-bg-body;
+}
+
+// Áp dụng font Inter cho toàn bộ giao diện
+body, html {
+  font-family: $font-family-primary;
+}
+
+code {
+  font-family: $font-family-code;
+}
+
+// Custom Scrollbar
+* {
+  @include custom-scrollbar;
+}

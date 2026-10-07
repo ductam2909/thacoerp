@@ -1,0 +1,167 @@
+// Page Container Styles
+
+.page-container {
+  @include flex-column;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  gap: $spacing-md;
+}
+
+.page-header {
+  // padding: $spacing-md $spacing-md;
+  padding: 10px 12px;
+  background-color: $color-bg-white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  flex-shrink: 0;
+
+  &-tabs {
+    // margin-top: $spacing-md;
+    // padding-top: 4px;
+    // border-top: 1px solid $color-border-light;
+
+    // .ant-tabs-nav {
+    //   margin-bottom: -$spacing-xl;
+    // }
+  }
+
+  &-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $spacing-md;
+
+    @include tablet-down {
+      text-align: left;
+      margin-top: $spacing-md;
+    }
+  }
+
+  &-extra {
+    flex: 0 1 auto;
+
+    @include tablet-down {
+      width: 100%;
+    }
+
+    &-wrapper {
+      display: flex;
+      gap: $spacing-md;
+      width: 100%;
+      align-items: center;
+
+      @include tablet-down {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    &-left {
+      display: flex;
+      gap: $spacing-md;
+      flex: 1;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    @include tablet-down {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: $spacing-md;
+    }
+  }
+
+  &-action-btn {
+    align-self: flex-end;
+  }
+
+  &-select {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .ant-btn {
+    height: 32px;
+    padding: 3px 12px;
+    border-radius: $radius-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.page-header-row {
+  @include tablet-down {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+}
+
+.page-header-left {
+  @include tablet-down {
+    width: 100%;
+  }
+}
+
+.page-title {
+  margin-bottom: 0 !important;
+  color: $color-text-main;
+  font-weight: $font-weight-semibold;
+  font-size: 16px !important;
+  line-height: 1.4;
+
+  @include tablet-down {
+    white-space: nowrap;
+  }
+}
+
+.page-search-input {
+  width: 250px;
+  height: 32px;
+  border-radius: $radius-base;
+  font-size: $font-size-base;
+
+  @include tablet-down {
+    width: 100%;
+  }
+}
+
+.page-content {
+  flex: 1;
+  padding: $spacing-md;
+  background-color: $color-bg-white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  overflow: auto;
+
+  &.hide-scroll {
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
+  }
+
+  .app-table-container,
+  .tree-table-container {
+    padding: 0 !important;
+    border: 1px solid $color-border !important;
+    border-radius: $radius-md !important;
+    box-shadow: none !important;
+    overflow: hidden;
+  }
+
+  .ant-table-body {
+    overflow-y: auto !important;
+  }
+
+  // Pagination padding since container has 0 padding
+  .ant-table-wrapper .ant-pagination {
+    padding: 0 $spacing-md $spacing-md $spacing-lg !important;
+  }
+}

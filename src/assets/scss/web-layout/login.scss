@@ -1,0 +1,119 @@
+.login {
+  &-container {
+    min-height: 100vh;
+    @include flex-center;
+    padding: clamp(10px, 3vw, 20px);
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 760px;
+    min-height: 400px;
+    background-color: $color-bg-white;
+    border-radius: clamp(12px, 3vw, 16px);
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0;
+
+    @include tablet-down {
+      flex-direction: column;
+      max-width: 450px;
+      min-height: auto;
+    }
+  }
+
+  &-left-panel {
+    flex: 1 1 42%;
+    padding: clamp(20px, 5vw, 40px) clamp(16px, 4vw, 30px);
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    @include tablet-down {
+      flex: none;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &-left-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include tablet-down {
+      align-items: center;
+    }
+  }
+
+  &-title {
+    font-size: clamp(24px, 6vw, 32px);
+    font-weight: $font-weight-bold;
+    margin-bottom: clamp(8px, 2vw, 12px);
+    color: $color-bg-white;
+    letter-spacing: 0.5px;
+  }
+
+  &-subtitle {
+    font-size: clamp(11px, 3vw, 13px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    color: $color-bg-white;
+    margin: 0;
+  }
+
+  &-logo-container {
+    margin-top: auto;
+
+    img {
+      max-height: clamp(50px, 12vw, 80px) !important;
+    }
+
+    @include tablet-down {
+      margin-top: clamp(16px, 4vw, 20px);
+    }
+  }
+
+  &-right-panel {
+    flex: 1 1 58%;
+    padding: clamp(30px, 6vw, 50px) clamp(20px, 5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-bg-white;
+
+    @include tablet-down {
+      flex: none;
+    }
+  }
+
+  &-welcome-container {
+    margin-bottom: clamp(20px, 5vw, 30px);
+    text-align: center;
+  }
+
+  &-welcome-title {
+    font-size: clamp(20px, 5vw, 22px);
+    font-weight: $font-weight-semibold;
+    margin-bottom: 6px;
+  }
+
+  &-welcome-desc {
+    font-size: clamp(13px, 3.5vw, 14px);
+    margin: 0;
+  }
+
+  &-submit-btn {
+    height: clamp(40px, 8vw, 44px);
+    font-size: clamp(14px, 3.5vw, 16px);
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-md;
+  }
+}
